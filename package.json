@@ -4,9 +4,11 @@
   "description": "",
   "main": "dist/index.js",
   "dependencies": {
+    "@types/node-fetch": "^2.5.7",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
     "path": "^0.12.7"
   },
   "devDependencies": {
@@ -27,7 +29,7 @@
     "build": "tsc",
     "clean": "rimraf dist/*",
     "copy-assets": "ts-node tools/copyAssets",
-    "dev": "nodemon --watch server -e ts --exec npm run dev:start",
+    "dev": "nodemon --verbose -e ts --exec npm run start",
     "dev:start": "npm-run-all clean lint tsc copy-assets",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
