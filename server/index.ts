@@ -17,13 +17,7 @@ const port = process.env.SERVER_PORT || 8080;
 // Configure routes.
 // routes.register(app);
 
-app.use('/api/v1/bookInfo', DataRouter);
-
-app.get('/data', (req: any, res) => {
-    const data = 'some data';
-    console.log('Sending ', data);
-    res.send(data);
-});
+app.use('/bookInfo', DataRouter);
 
 app.listen(port, () => {
     console.log(`Server running at https://localhost:${port}`);
